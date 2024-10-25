@@ -22,7 +22,8 @@ function App() {
                 <form onSubmit={doCovert}>
                     <label htmlFor="fizzbuzz_number">please enter number</label>
                     <input type="number" id="fizzbuzz_number" name="fizzbuzz_number" onChange={doCovert}/>
-                    <button type="submit">Convert</button>
+                    <button onClick={() => {setResult(null)}}>Reset</button>
+
                 </form>
             </header>
         </div>
