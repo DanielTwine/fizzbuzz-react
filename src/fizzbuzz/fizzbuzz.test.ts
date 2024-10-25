@@ -1,4 +1,4 @@
-import {FizzBuzz} from "./fizzbuzz.ts";
+import {FizzBuzz} from "./fizzbuzz";
 
 describe('Fizzbuzz Converter', () => {
     let converter: FizzBuzz

@@ -10,15 +10,12 @@ function App() {
         <p>
           Welcome to our fizz buzz app.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+
+        <label htmlFor="fizzbuzz_number">please enter number</label>
+        <input type="number" id="fizzbuzz_number" name="fizzbuzz_number" />
+        <button>Convert</button>
       </header>
+
     </div>
   );
 }
