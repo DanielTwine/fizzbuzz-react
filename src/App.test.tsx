@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen } from '@testing-library/react';
+import {fireEvent, render, screen} from '@testing-library/react';
 import App from './App';
 
 describe('Our FizzBuzz react app', () => {
@@ -11,12 +11,26 @@ describe('Our FizzBuzz react app', () => {
     expect(numberField).toBeVisible()
   });
 
-  it('should have a convert button', () => {
+
+
+  it('should conver 1 to a string', async () => {
     render(<App />);
 
-    const convertButton = screen.getByText("Convert")
+    const numberField =  await screen.findByLabelText("please enter number");
 
-    expect(convertButton).toBeVisible()
+    fireEvent.input(numberField, {target: {value: 1}});
+
+    expect(screen.getByText("Result: 1")).toBeVisible();
+  });
+
+  it('should conver 2 to a string', async () => {
+    render(<App />);
+
+    const numberField =  await screen.findByLabelText("please enter number");
+
+    fireEvent.input(numberField, {target: {value: 2}});
+
+    expect(screen.getByText("Result: 2")).toBeVisible();
   });
 });
 
