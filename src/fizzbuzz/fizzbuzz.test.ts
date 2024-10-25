@@ -55,7 +55,7 @@ describe('Fizzbuzz Converter', () => {
         });
 
         it('should return fizzbuzz when given 45 ', () => {
-            expect(converter.convert(45)).toEqual("fizzbuzz");
+            expect(converter.convert(45)).toEqual("fizzbuzzz");
         });
     });
 });
