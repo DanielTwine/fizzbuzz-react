@@ -1,12 +1,18 @@
 import React, {useState} from 'react';
 import logo from './logo.svg';
 import './App.css';
+import {FizzBuzz} from "./fizzbuzz/fizzbuzz";
 
 function App() {
     const [result, setResult] = useState<string|null>(null);
 
+    const converter = new FizzBuzz();
+
     const doCovert =  (formData: any)=> {
-        setResult(formData.target.value);
+        if (formData.target.value != null) {
+            const fizzresult = converter.convert(formData.target.value);
+            setResult(fizzresult);
+        }
     }
 
     return (

@@ -1,7 +1,6 @@
 import React from 'react';
 import {fireEvent, render, screen} from '@testing-library/react';
 import App from './App';
-import exp from "node:constants";
 
 describe('Our FizzBuzz react app', () => {
   it('should have a number input field', async () => {
@@ -32,6 +31,21 @@ describe('Our FizzBuzz react app', () => {
     fireEvent.input(numberField, {target: {value: 2}});
 
     expect(screen.getByText("Result: 2")).toBeVisible();
+  });
+
+  it('should work with fizzbuzz', async () => {
+    render(<App />);
+
+    const numberField =  await screen.findByLabelText("please enter number");
+
+    fireEvent.input(numberField, {target: {value: 3}});
+    expect(screen.getByText("Result: fizz")).toBeVisible();
+
+    fireEvent.input(numberField, {target: {value: 5}});
+    expect(screen.getByText("Result: buzz")).toBeVisible();
+
+    fireEvent.input(numberField, {target: {value: 15}});
+    expect(screen.getByText("Result: fizzbuzz")).toBeVisible();
   });
 
   it('should clear the form', async () => {
